@@ -12,3 +12,17 @@ a boiler-plate application of any sort. Think swiss-army knife, but with a littl
 Version|Published|By|URL
 --- | --- | --- | ---
 **0.0.4** | **2017-04-01** | `codebloke` | [npm](https://www.npmjs.com/package/girya)
+
+### Installation
+
+Add `girya` to your project:
+
+```bash
+    npm install --save girya
+```
+then in your code, by adding:
+```javascript
+    var girya = require('girya');
+```
+
+### Tools
