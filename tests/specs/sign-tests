@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPT`
+
+cd $SCRIPTPATH
+
+echo "MD5 Signatures" > $SCRIPTPATH/_md5/README.md
+echo "---" >> $SCRIPTPATH/_md5/README.md
+echo "" >> $SCRIPTPATH/_md5/README.md
+
+for i in *spec.js
+do
+    FILE=$i
+    MD5SUM=`md5sum $FILE`
+    BASENAME=`echo $MD5SUM | cut -d ' ' -f 2`
+    JSON="${BASENAME/spec.js/details.json}"
+    MD5=`echo $MD5SUM | cut -d ' ' -f 1`
+
+    echo "{ \"md5\": \"$MD5\", \"file\": \"$BASENAME\" }" > $SCRIPTPATH/_md5/$JSON
+    echo " * **$BASENAME** ($MD5)" >> $SCRIPTPATH/_md5/README.md
+
+    echo "Processing and signing... $i ($MD5)"
+
+done
+
+echo "" >> $SCRIPTPATH/_md5/README.md
+
+exit 0
