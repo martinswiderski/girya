@@ -15,7 +15,7 @@ Version|Published|By|URL
 
 ### Installation
 
-Add `girya` to your project:
+Add **`girya`** to your project:
 
 ```bash
     npm install --save girya
