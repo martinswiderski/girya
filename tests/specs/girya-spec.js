@@ -5,7 +5,12 @@ var girya = require('./../../index');
 var _test = require('./_md5/girya-details.json'),
     color = require('bash-color');
 
-console.log('MD5: ' + color.cyan(_test.md5) + ' File: ' + color.yellow(_test.file));
+console.log(
+    'MD5: ' +
+    color.wrap(_test.md5, color.colors.BLUE, color.styles.bold) +
+    ' File: ' +
+    color.wrap(_test.file, color.colors.YELLOW, color.styles.bold)
+);
 
 describe('Implements multiple interfaces', function () {
     it('version', function () {
