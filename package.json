@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "bash-color": "0.0.4",
     "md5": "^2.2.1"
   },
   "devDependencies": {
@@ -18,7 +19,7 @@
     "alias-jasmine-node": "alias jasmine-node=./node_modules/.bin/jasmine-node",
     "alias-istanbul": "alias istanbul=./node_modules/.bin/istanbul",
     "alias-eslint": "alias eslint=./node_modules/.bin/eslint",
-    "alias-all": "npm run alias-eslint; npm run alias-istanbul; npm run alias-jasmine-node",
+    "alias-all": "alias jasmine-node=./node_modules/.bin/jasmine-node; alias eslint=./node_modules/.bin/eslint; alias istanbul=./node_modules/.bin/istanbul",
     "prep-tests": "rm -fr reports/; mkdir reports/; mkdir reports/eslint/; mkdir reports/junit/; echo \"Reports\n---\" > reports/README.md",
     "test": "npm run alias-all; jasmine-node --junitreport tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
     "check-eslint": "npm run alias-all; OUT='./reports/eslint/eslint.txt'; date > $OUT; eslint src/*.js >> $OUT; eslint ./index.js >> $OUT; eslint tests/specs/*.js >> $OUT; echo \"DONE!\"",
