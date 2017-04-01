@@ -1,0 +1,49 @@
+{
+  "name": "girya",
+  "version": "0.0.1",
+  "description": "Small set of tools for all the heavy-lifting",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "md5": "^2.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "istanbul": "^0.4.5",
+    "jasmine-node": "^1.14.5"
+  },
+  "scripts": {
+    "alias-jasmine-node": "alias jasmine-node=./node_modules/.bin/jasmine-node",
+    "alias-istanbul": "alias istanbul=./node_modules/.bin/istanbul",
+    "alias-eslint": "alias eslint=./node_modules/.bin/eslint",
+    "alias-all": "npm run alias-eslint; npm run alias-istanbul; npm run alias-jasmine-node",
+    "prep-tests": "rm -fr reports/; mkdir reports/; mkdir reports/eslint/; mkdir reports/junit/; echo \"Reports\n---\" > reports/README.md",
+    "test": "npm run alias-all; jasmine-node --junitreport tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
+    "check-eslint": "npm run alias-all; OUT='./reports/eslint/eslint.txt'; date > $OUT; eslint src/*.js >> $OUT; eslint ./index.js >> $OUT; eslint tests/specs/*.js >> $OUT; echo \"DONE!\"",
+    "check-coverage": "rm -fr reports/coverage/; npm run alias-all; istanbul cover --include-all-sources -x \"**src/tools/**\" jasmine-node tests/specs/; rm -fr reports/coverage/; mv coverage reports/; git checkout tests/props/*.*",
+    "tests": "npm test; npm run check-eslint; npm run check-coverage",
+    "rebuild": "rm -fr node_modules; npm install",
+    "all": "npm run rebuild; npm run tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://martinswiderski@github.com/martinswiderski/girya.git"
+  },
+  "keywords": [
+    "tools",
+    "application",
+    "tasks",
+    "configuration",
+    "environment",
+    "variables",
+    "encryption"
+  ],
+  "author": "Martin Swiderski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinswiderski/girya/issues"
+  },
+  "homepage": "https://github.com/martinswiderski/girya#readme"
+}
