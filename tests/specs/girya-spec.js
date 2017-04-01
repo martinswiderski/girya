@@ -14,20 +14,22 @@ console.log(
 
 describe('Implements multiple interfaces', function () {
     it('version', function () {
-       expect(typeof girya.version).toBe('function');
-       expect(girya.version()).toBe('0.0.1');
+        expect(typeof girya.version).toBe('function');
+        expect(girya.version()).toBe('0.0.1');
     });
     it('_config', function () {
-       expect(typeof girya._config).toBe('function');
+        expect(typeof girya._config).toBe('object');
+        expect(girya._config.version).toBe(girya.version());
     });
     it('package', function () {
-       expect(typeof girya.package).toBe('function');
-       expect(girya.package().version).toBe('0.0.1');
-       expect(girya.package().name).toBe('girya');
+        expect(typeof girya.package).toBe('function');
+        expect(girya.package().version).toBe('0.0.1');
+        expect(girya.package().name).toBe('girya');
     });
     it('version', function () {
-       expect(typeof girya.configuration).toBe('object');
-       expect(girya.configuration.id()).toBe(1);
+        expect(typeof girya.Configuration).toBe('object');
+        expect(girya.Configuration.id()).toBe(1);
+        expect(girya.Configuration.init().id()).toBe(1);
     });
 });
 

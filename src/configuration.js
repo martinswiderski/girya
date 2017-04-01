@@ -1,21 +1,8 @@
 'use strict';
 
-var _c = 0, _store = {
-        obj: null,
-        unique: '',
-        initd: false
-    },
+var _c = 0, _store = false,
     md5 = require('md5'),
     ConfigurationError = require('./configuration-error');
-
-function singleton(store) {
-    if (store.obj === null) {
-        store.obj = (new Configuration()).init();
-        store.initd = (typeof store.obj.id() === 'number' && 0 < store.obj.id());
-        store.unique = md5((JSON.stringify(store.obj)));
-    }
-    return store.obj;
-}
 
 function Configuration() {
 
@@ -53,13 +40,13 @@ function Configuration() {
 
     this.init = function() {
         if (_c > 0) {
-            return _store.obj;
+            return _store;
         } else {
             this.reset();
             this.id(++_c);
             return this;
         }
-    }
+    };
 }
 
-module.exports = singleton(_store);
+module.exports = (_store !== false) ? _store : _store = (new Configuration()).init();
