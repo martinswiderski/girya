@@ -2,14 +2,11 @@
 
 var _c     = 0,
     _store = false,
-    _conf  = require('./_conf'),
-    md5    = require('md5'),
-    ConfigurationError = require('./configuration-error');
+    md5    = require('md5');
 
 function Configuration() {
 
-    var _id = 0,
-        _initd = false;
+    var _id = 0;
 
     this._id = 0;
 
@@ -18,7 +15,6 @@ function Configuration() {
             && typeof id === 'number'
             && parseInt(id) > 0) {
             _id = this._id = parseInt(id);
-            _initd = true;
         }
         return _id;
     };

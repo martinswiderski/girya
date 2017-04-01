@@ -1,7 +1,5 @@
 var girya = require('./../../index'),
-    configuration = girya.Configuration,
-    _err = false,
-    _details = [];
+    configuration = girya.Configuration;
 
 var _test = require('./_md5/configuration-details.json'),
     color = require('bash-color');
