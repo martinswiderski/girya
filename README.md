@@ -11,7 +11,7 @@ a boiler-plate application of any sort. Think swiss-army knife, but with a littl
 
 Version|Published|By|URL
 --- | --- | --- | ---
-**0.0.4** | **2017-04-01** | `codebloke` | [npm](https://www.npmjs.com/package/girya)
+**0.0.1** | **2017-04-01** | `codebloke` | [npm](https://www.npmjs.com/package/valdi)
 
 ### Installation
 
