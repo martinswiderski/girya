@@ -20,7 +20,7 @@ do
     DATE=${GIT/Date:   /}
     COMMIT=`git log --follow $BASENAME | grep "Sat Apr 1 20:08:46 2017 +0100" -B 3 | grep "commit" | tail -c 9`
     echo "{ \"md5\": \"$MD5\", \"file\": \"$BASENAME\" }" > $SCRIPTPATH/_md5/$JSON
-    echo " * **$BASENAME** ($MD5, $DATE ...$COMMIT)" >> $SCRIPTPATH/README.md
+    echo " * **[$BASENAME]($BASENAME)** ($MD5, $DATE ...$COMMIT)" >> $SCRIPTPATH/README.md
 
     echo "Processing and signing... $i ($MD5)"
 
