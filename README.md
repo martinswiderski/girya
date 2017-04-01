@@ -7,6 +7,7 @@ Solutions to common light-weight application problems
 that cause headache and inconvenience. However, it's not 
 a boiler-plate application of any sort. Think swiss-army knife, but with a little more impact on subject.
 
+###
 ### Current version
 
 Version|Published|By|URL
@@ -25,4 +26,5 @@ then in your code, by adding:
     var girya = require('girya');
 ```
 
+###
 ### Tools
