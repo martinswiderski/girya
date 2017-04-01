@@ -11,3 +11,4 @@ describe('Implements multiple interfaces', function () {
        expect(girya.version()).toBe('0.0.1');
     });
 });
+
