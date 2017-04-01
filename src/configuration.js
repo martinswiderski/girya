@@ -1,7 +1,9 @@
 'use strict';
 
-var _c = 0, _store = false,
-    md5 = require('md5'),
+var _c     = 0,
+    _store = false,
+    _conf  = require('./_conf'),
+    md5    = require('md5'),
     ConfigurationError = require('./configuration-error');
 
 function Configuration() {
@@ -22,16 +24,7 @@ function Configuration() {
     };
 
     this.sign = function() {
-        this._enforceSingleton();
         return md5(JSON.stringify(this));
-    };
-
-    this._enforceSingleton = function() {
-        if (_initd !== true) {
-            throw new ConfigurationError('Illegal instance, use init() after constructing');
-        } else {
-            return;
-        }
     };
 
     this.reset = function() {
