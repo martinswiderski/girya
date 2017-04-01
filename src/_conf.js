@@ -7,12 +7,12 @@ module.exports = {
     readme: 'README.md',
     package: 'package.json',
     err: {
-        KeyValueNotFound: 'Value of the key not found... ',
-        ObjectsOnly: 'Options read generic objects only.',
-        WrongKeyValue: 'Value of key is  not allowed... ',
-        InvalidJson: 'Invalid JSON file.',
-        JsonDoesNotExist: 'JSON file does not exist.',
-        ConfigMustBeObject: 'Configuration must be a generic object.',
-        UnexpectedSource: 'Unexpected value source... '
+        kvnf: 'Value of the key not found... ',
+        oo: 'Options read generic objects only.',
+        wkv: 'Value of key is  not allowed... ',
+        ij: 'Invalid JSON file.',
+        jdne: 'JSON file does not exist.',
+        cmbo: 'Configuration must be a generic object.',
+        us: 'Unexpected value source... '
     }
 };
