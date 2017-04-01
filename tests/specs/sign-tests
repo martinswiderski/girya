@@ -5,9 +5,9 @@ SCRIPTPATH=`dirname $SCRIPT`
 
 cd $SCRIPTPATH
 
-echo "MD5 Signatures" > $SCRIPTPATH/_md5/README.md
-echo "---" >> $SCRIPTPATH/_md5/README.md
-echo "" >> $SCRIPTPATH/_md5/README.md
+echo "MD5 Signatures" > $SCRIPTPATH/README.md
+echo "---" >> $SCRIPTPATH/README.md
+echo "" >> $SCRIPTPATH/README.md
 
 for i in *spec.js
 do
@@ -20,12 +20,12 @@ do
     DATE=${GIT/Date:   /}
     COMMIT=`git log --follow $BASENAME | grep "Sat Apr 1 20:08:46 2017 +0100" -B 3 | grep "commit" | tail -c 9`
     echo "{ \"md5\": \"$MD5\", \"file\": \"$BASENAME\" }" > $SCRIPTPATH/_md5/$JSON
-    echo " * **$BASENAME** ($MD5, $DATE ...$COMMIT)" >> $SCRIPTPATH/_md5/README.md
+    echo " * **$BASENAME** ($MD5, $DATE ...$COMMIT)" >> $SCRIPTPATH/README.md
 
     echo "Processing and signing... $i ($MD5)"
 
 done
 
-echo "" >> $SCRIPTPATH/_md5/README.md
+echo "" >> $SCRIPTPATH/README.md
 
 exit 0
