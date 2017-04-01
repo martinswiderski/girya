@@ -1,10 +1,6 @@
 girya
 ---
 
-<p align="left">
-  <img src="https://raw.githubusercontent.com/martinswiderski/girya/master/girya-logo.png" alt="npm girya"/>
-</p>
-
 #### Small set of tools for all the heavy-lifting 
 
 Solutions to common light-weight application problems 
